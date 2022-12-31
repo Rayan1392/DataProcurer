@@ -80,26 +80,6 @@ namespace Infrastructure.Repositories
             return response;
         }
 
-        public async Task<int> InsertMagnetStrategyExecution()
-        {
-
-            int response = 0;
-            try
-            {
-                var sql = "Tse.SP_MagnetStrategyExecution_Insert";
-                using (var connection = new SqlConnection(configuration.GetConnectionString("Connection")))
-                {
-                    connection.Open();
-                    response = await connection.ExecuteAsync(sql, commandType: System.Data.CommandType.StoredProcedure);
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.Message);
-            }
-            return response;
-        }
-
         public Task<int> UpdateAsync(Trade entity)
         {
             throw new NotImplementedException();
