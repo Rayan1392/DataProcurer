@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Application.Common.Interfaces
 {
-    public interface IBackgroundJobs
+    public interface IDataService
     {
-        string CronMagnetStrategy { get; }
-        void Execute();
+        void Persist();
     }
 }
